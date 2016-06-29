@@ -173,6 +173,7 @@
         </section>
 
         <section>
+        	<!--
           <h2>Store Data</h2>
           <code-box langs="JavaScript,Swift,Java">
             <code-example lang="JavaScript">
@@ -188,12 +189,17 @@ Firebase ref = new Firebase("https://&lt;your-firebase-app&gt;.firebaseio.com/me
 ref.setValue("All the things");
             </code-example>
           </code-box>
+//-->
+	<pre><code data-trim data-noescape>
+		var ref = new Firebase("https://&lt;your-firebase-app&gt;.firebaseio.com/message");
+ref.set('All the things');
+  	</code></pre>
 
         </section>
 
         <section>
           <h2>Sync Data</h2>
-
+	<!--
           <code-box langs="JavaScript,Swift,Java">
             <code-example lang="JavaScript">
 var ref = new Firebase("https://xicoapp.firebaseio.com/message");
@@ -218,6 +224,13 @@ ref.addValueEventListener(new ValueEventListener() {
 });
             </code-example>
           </code-box>
+//-->
+		<pre><code data-trim data-noescape>
+			var ref = new Firebase("https://xicoapp.firebaseio.com/message");
+			ref.on("value", function(snap) {
+			  console.log(snap.val());
+			});
+	  	</code></pre>
 
         </section>
 

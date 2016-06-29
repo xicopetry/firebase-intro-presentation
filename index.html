@@ -6,8 +6,8 @@
 
     <title>Building Realtime Apps with Firebase</title>
 
-    <meta name="description" content="Intro to Firebase">
-    <meta name="author" content="YOUR_NAME">
+    <meta name="description" content="Introdução ao Firebase">
+    <meta name="author" content="Francisco Petry Rauber">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -69,22 +69,22 @@
         -->
         <section title="">
           <br><br>
-          <h2>Intro to Firebase</h2>
+          <h2>Introdução ao Firebase</h2>
           <img src="images/firebase-logo.png" class="no-style">
           <br> <br>
           <p>
-            <h6>YOUR_NAME / <a href="http://twitter.com/YOUR_TWITTER_HANDLE">@YOUR_TWITTER_HANDLE</a></h6>
+            <h6>Francisco Petry Rauber</h6>
 
           </p>
         </section>
 
         <section>
-          <p class="text-cream text-medium">The <span class="text-discs">Realtime Backend</span></p>
-          <p class="text-cream text-medium">for your App</p>
+          <p class="text-cream text-medium">Um  <span class="text-discs">Backend Conectado</span></p>
+          <p class="text-cream text-medium">para o seu App</p>
         </section>
 
         <section>
-          <p class="text-medium">Creating an app shouldn't require managing complex infrastructure.</p>
+          <p class="text-medium">Criar um app requere um entendimento complexo de infraestrutura.</p>
         </section>
 
         <section>
@@ -93,26 +93,26 @@
         </section>
 
         <section>
-          <p class="text-small">The full stack is never really that simple</p>
+          <p class="text-small">"The Full Stack" não eh sempre tao simples assim</p>
           <img src="images/backend-reqs.gif" alt="" class="white-bg no-style" />
         </section>
 
         <section>
-          <p class="text-small">... and neither is the client side</p>
+          <p class="text-small">...e nao eh "client side"</p>
           <br><br>
           <img src="images/clients.png" alt="gdocs" class="no-style" />
         </section>
 
         <section>
-					<p class="text-medium era-point">The user doesn't care about your backend</p>
-				</section>
+		<p class="text-medium era-point">O usuário nao liga para o que vc esta usando no "backend"</p>
+	</section>
 
         <section>
-          <h4>The user expects</h4>
-          <p class="text-small era-point">Speed</p>
+          <h4>O usuário espera:</h4>
+          <p class="text-small era-point">Velocidade</p>
           <p class="text-small era-point">Offline</p>
-          <p class="text-small era-point">Multi-platform</p>
-          <p class="text-small era-point">Simple Authentication</p>
+          <p class="text-small era-point">Multi-platforma</p>
+          <p class="text-small era-point">Autenticacao Simples</p>
         </section>
 
         <!--
@@ -127,7 +127,7 @@
         </section>
 
         <section>
-          <h4>The Firebase Backend</h4>
+          <h4>Firebase Backend</h4>
           <img src="images/data-box.png" class="no-style framework-logo">
           <img src="images/login-box.png" class="no-style framework-logo">
           <img src="images/security-box.png" class="no-style framework-logo">
@@ -135,11 +135,11 @@
         </section>
 
         <section>
-					<h3>Forget the Server</h3>
-					<p class="era-point">Firebase apps can run on client-side code only</p>
-					<br>
-					<img src="images/platforms.png" alt="" class="no-style framework-logo">
-				</section>
+		<h3>Esqueca o Servidor</h3>
+		<p class="era-point">Firebase roda apenas com códigos em "client-side"</p>
+		<br>
+		<img src="images/platforms.png" alt="" class="no-style framework-logo">
+	</section>
 
         <section>
           <img src="images/data-box.png" class="no-style framework-logo">
@@ -148,7 +148,7 @@
         <section>
           <h2>Cloud database</h2>
           <p class="era-point">NoSQL data-store</p>
-          <p class="era-point">Returns JSON from a RESTful API</p>
+          <p class="era-point">Retorna JSON de uma RESTful API</p>
         </section>
 
         <section>
@@ -156,10 +156,10 @@
         </section>
 
         <section>
-          <h2>Realtime Data</h2>
+          <h2>Dados em tempo real</h2>
           <p class="era-point text-cream">
-            Whenever <span class="text-discs">data is  updated in Firebase</span>,
-            it sends the update down to every <span class="text-tarheel">listening client</span>
+            A qualquer momento em que eh realizado um <span class="text-discs">update em um dado no Firebase</span>,
+            ele envia as mudancas para todos os <span class="text-tarheel">clientes conectados</span>
           </p>
         </section>
 
@@ -176,15 +176,15 @@
           <h2>Store Data</h2>
           <code-box langs="JavaScript,Swift,Java">
             <code-example lang="JavaScript">
-var ref = new Firebase("https://&lt;your-firebase-app&gt;.firebaseio.com/message");
+var ref = new Firebase("https://xicoapp.firebaseio.com/message");
 ref.set('All the things');
             </code-example>
             <code-example lang="Swift">
-let ref = Firebase(url: "https://&lt;your-firebase-app&gt;.firebaseio.com/message")
+let ref = Firebase(url: "https://xicoapp.firebaseio.com/message")
 ref.setValue("All the things")
             </code-example>
             <code-example lang="Java">
-Firebase ref = new Firebase("https://&lt;your-firebase-app&gt;.firebaseio.com/message");
+Firebase ref = new Firebase("https://xicoapp.firebaseio.com/message");
 ref.setValue("All the things");
             </code-example>
           </code-box>
@@ -196,19 +196,19 @@ ref.setValue("All the things");
 
           <code-box langs="JavaScript,Swift,Java">
             <code-example lang="JavaScript">
-var ref = new Firebase("https://&lt;your-firebase-app&gt;.firebaseio.com/message");
+var ref = new Firebase("https://xicoapp.firebaseio.com/message");
 ref.on("value", function(snap) {
   console.log(snap.val());
 });
             </code-example>
             <code-example lang="Swift">
-let ref = Firebase(url: "https://&lt;your-firebase-app&gt;.firebaseio.com/message")
+let ref = Firebase(url: "https://xicoapp.firebaseio.com/message")
 ref.observeEventType(.Value, withBlock: { snap in
   println(snap.value)
 })
             </code-example>
             <code-example lang="Java">
-Firebase ref = new Firebase("https://&lt;your-firebase-app&gt;.firebaseio.com/message");
+Firebase ref = new Firebase("https://xicoapp.firebaseio.com/message");
 ref.addValueEventListener(new ValueEventListener() {
   @Override
   public void onDataChange(DataSnapshot snapshot) {
@@ -229,11 +229,11 @@ ref.addValueEventListener(new ValueEventListener() {
         <section>
           <h3>Intermittent Offline</h3>
 
-          <p class="text-small">What happens when you go through a tunnel?</p>
+          <p class="text-small">O que acontece quando quando vc passa por um tunel?</p>
           <br><br>
           <p class="text-small fragment">
-            Firebase clients store a local cache of your data. When the user
-            goes offline, the app still works as expected with the local cache.
+          	O "Firebase client" guarda um cache local dos seus dados. Quando o 
+          	usuario fica offline, o app ainda funciona como o esperado com esse cache local.
           </p>
 
         </section>
@@ -241,9 +241,11 @@ ref.addValueEventListener(new ValueEventListener() {
         <section>
           <h3>Extended Offline</h3>
 
-          <p class="text-small">What happens when you go on a flight?</p>
+          <p class="text-small">O que acontece quando vc anda de aviao?</p>
           <br><br>
           <p class="text-small fragment">
+          	No mobile, Firebase perciste data na memoria local. O app vai continuar
+          	a funcionar mesmo quando o usuario reiniciar ele.
             On mobile, Firebase persists data to a local store. The app will continue
             to work even across app restarts.
           </p>
@@ -251,7 +253,7 @@ ref.addValueEventListener(new ValueEventListener() {
         </section>
 
         <section>
-          <h3>One line of code</h3>
+          <h3>Uma linha de código</h3>
 
           <code-box langs="Swift,Java">
             <code-example lang="Swift">
@@ -271,7 +273,7 @@ Firebase.getDefaultConfig().setPersistenceEnabled(true);
         <section>
 
           <p class="era-point text-small">
-            Firebase supports several forms of authentication
+            Firebase suporta varios tipos de autenticacao
           </p>
 
           <p class="era-point fragment">
@@ -299,7 +301,7 @@ Firebase.getDefaultConfig().setPersistenceEnabled(true);
           </p>
 
           <p class="era-point fragment">
-             ...and even custom backends
+             ...e tambem o seu proprio backend
           </p>
 
         </section>
@@ -392,39 +394,39 @@ ref.addAuthStateListener(new Firebase.AuthStateListener() {
         <section>
           <h3>Security</h3>
           <p class="era-point">
-            By default everyone can write and read
+          	Por default, todos podem ler e escrever
           </p>
-					<pre>
-						<code data-trim class="json">
-{
-  "rules": {
-    ".read": true,
-    ".write": true,
-  }
-}
-						</code>
-					</pre>
+		<pre>
+			<code data-trim class="json">
+			{
+				"rules": {
+					".read": true,
+					".write": true,
+				}
+			}
+			</code>
+		</pre>
         </section>
 
         <section>
           <p class="era-point">
-            Everyone can read, but no one can write
+            Todos podem ler, mas niguem pode escrever
           </p>
-					<pre>
-						<code data-trim class="json">
-{
-  "rules": {
-    ".read": true,
-    ".write": false,
-  }
-}
-						</code>
-					</pre>
+		<pre>
+			<code data-trim class="json">
+			{
+				"rules": {
+					".read": true,
+					".write": false,
+				}
+			}
+			</code>
+		</pre>
         </section>
 
         <section>
           <p class="era-point">
-            Secure specific parts of your Firebase
+          	Seguranca em partes especificas do seu Firebase
           </p>
 					<pre>
 						<code data-trim class="json">
@@ -443,7 +445,7 @@ ref.addAuthStateListener(new Firebase.AuthStateListener() {
 
         <section>
           <p class="era-point">
-            Special variables to power authentication
+          	Variaveis especiais para melhorar a autenticacao
           </p>
 					<pre>
 						<code data-trim class="json">
@@ -463,7 +465,7 @@ ref.addAuthStateListener(new Firebase.AuthStateListener() {
 
         <section>
 					<h3>Security</h3>
-					<p class="text-small">Use $wildcards as route parameters</p>
+					<p class="text-small">Use $wildcards como rota de parametros</p>
 					<pre>
 						<code data-trim class="json">
 {

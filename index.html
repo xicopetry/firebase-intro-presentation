@@ -426,6 +426,44 @@ ref.onAuth(function(authData) {
 });
 	  	</code></pre>
         </section>
+       
+      <section class="hasCode">
+        <h3>Transações</h3>
+      <pre><code data-trim data-noescape>
+// Increment Fred's rank by 1.
+var fredRankRef = new Firebase('https://docs-examples.firebaseio.com/samplechat/users/fred/rank');
+fredRankRef.transaction(function(currentRank) {
+   // If /users/fred/rank has never been set, currentRank will be null.
+  return currentRank+1;
+});
+	  	</code></pre>
+      </section>
+      
+      <section class="hasCode">
+        <h3>Transações</h3>
+// Try to create a user for wilma, but only if the user id 'wilma' isn't already taken
+var wilmaRef = new Firebase('https://docs-examples.firebaseio.com/samplechat/users/wilma');
+wilmaRef.transaction(function(currentData) {
+  if (currentData === null) {
+    return { name: { first: 'Wilma', last: 'Flintstone' } };
+  } else {
+    console.log('User wilma already exists.');
+    return; // Abort the transaction.
+  }
+}, function(error, committed, snapshot) {
+  if (error) {
+    console.log('Transaction failed abnormally!', error);
+  } else if (!committed) {
+    console.log('We aborted the transaction (because wilma already exists).');
+  } else {
+    console.log('User wilma added!');
+  }
+  console.log("Wilma's data: ", snapshot.val());
+});
+	  	</code></pre>
+      </section>
+
+
 
         <section>
           <img src="images/security-box.png" class="no-style framework-logo">

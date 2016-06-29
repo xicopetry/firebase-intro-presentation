@@ -226,20 +226,20 @@ ref.addValueEventListener(new ValueEventListener() {
           </code-box>
 //-->
 		<pre><code data-trim data-noescape>
-			// JavaScript
-			var ref = new Firebase("https://xicoapp.firebaseio.com/message");
-			ref.on("value", function(snap) {
-			  console.log(snap.val());
-			});
-			// Java
-			Firebase ref = new Firebase("https://xicoapp.firebaseio.com/message");
-			ref.addValueEventListener(new ValueEventListener() {
-			  @Override
-			  public void onDataChange(DataSnapshot snapshot) {
-			    System.out.println(snapshot.getValue());
-			  }
-			  @Override public void onCancelled(FirebaseError error) { }
-			});
+// JavaScript
+var ref = new Firebase("https://xicoapp.firebaseio.com/message");
+ref.on("value", function(snap) {
+  console.log(snap.val());
+});
+// Java
+Firebase ref = new Firebase("https://xicoapp.firebaseio.com/message");
+ref.addValueEventListener(new ValueEventListener() {
+  @Override
+  public void onDataChange(DataSnapshot snapshot) {
+    System.out.println(snapshot.getValue());
+  }
+  @Override public void onCancelled(FirebaseError error) { }
+});
 	  	</code></pre>
 
         </section>
@@ -252,7 +252,7 @@ ref.addValueEventListener(new ValueEventListener() {
         <section>
           <h3>Intermittent Offline</h3>
 
-          <p class="text-small">O que acontece quando quando vc passa por um tunel?</p>
+          <p class="text-small">O que acontece quando quando você passa por um túnel?</p>
           <br><br>
           <p class="text-small fragment">
           	O "Firebase client" guarda um cache local dos seus dados. Quando o 
@@ -264,13 +264,11 @@ ref.addValueEventListener(new ValueEventListener() {
         <section>
           <h3>Extended Offline</h3>
 
-          <p class="text-small">O que acontece quando vc anda de aviao?</p>
+          <p class="text-small">O que acontece quando você anda de avião?</p>
           <br><br>
           <p class="text-small fragment">
-          	No mobile, Firebase perciste data na memoria local. O app vai continuar
-          	a funcionar mesmo quando o usuario reiniciar ele.
-            On mobile, Firebase persists data to a local store. The app will continue
-            to work even across app restarts.
+          	No mobile, Firebase perciste dados na memória local. O app vai continuar
+          	a funcionar mesmo quando o usuário reiniciar ele.
           </p>
 
         </section>
@@ -288,8 +286,8 @@ Firebase.getDefaultConfig().setPersistenceEnabled(true);
           </code-box>
 //-->
 		<pre><code data-trim data-noescape>
-			// Java
-			Firebase.getDefaultConfig().setPersistenceEnabled(true);
+// Java
+Firebase.getDefaultConfig().setPersistenceEnabled(true);
 	  	</code></pre>
         </section>
 
@@ -328,7 +326,7 @@ Firebase.getDefaultConfig().setPersistenceEnabled(true);
           </p>
 
           <p class="era-point fragment">
-             ...e tambem o seu proprio backend
+             ...e também o seu proprio backend
           </p>
 
         </section>
@@ -374,17 +372,17 @@ ref.authWithOAuthToken("google", "&lt;OAuth Token&gt;", new Firebase.AuthResultH
           </code-box>
 //-->
 	<pre><code data-trim data-noescape>
-		// Login with Google
-		ref.authWithOAuthPopup('google', function(error, authData) {
-		  console.log(authData);
-		});
+// Login with Google
+ref.authWithOAuthPopup('google', function(error, authData) {
+  console.log(authData);
+});
   	</code></pre>
 
         </section>
 
         <section class="hasCode">
 
-          <h3>Autentição</h3>
+          <h3>Autenticação</h3>
 <!--
           <code-box langs="JavaScript,Swift,Java">
             <code-example lang="JavaScript" prop="one">
@@ -420,12 +418,12 @@ ref.addAuthStateListener(new Firebase.AuthStateListener() {
           </code-box>
 //-->
 		<pre><code data-trim data-noescape>
-			// Listen for authentcated users
-			ref.onAuth(function(authData) {
-			  if(authData) {
-			    console.log('User is logged in!');
-			  }
-			});
+// Listen for authentcated users
+ref.onAuth(function(authData) {
+  if(authData) {
+    console.log('User is logged in!');
+  }
+});
 	  	</code></pre>
         </section>
 
@@ -440,12 +438,12 @@ ref.addAuthStateListener(new Firebase.AuthStateListener() {
           </p>
 		<pre>
 			<code data-trim class="json">
-			{
-				"rules": {
-					".read": true,
-					".write": true,
-				}
-			}
+{
+"rules": {
+	".read": true,
+	".write": true,
+	}
+}
 			</code>
 		</pre>
         </section>
@@ -456,22 +454,22 @@ ref.addAuthStateListener(new Firebase.AuthStateListener() {
           </p>
 		<pre>
 			<code data-trim class="json">
-			{
-				"rules": {
-					".read": true,
-					".write": false,
-				}
-			}
+{
+"rules": {
+	".read": true,
+	".write": false,
+	}
+}
 			</code>
 		</pre>
         </section>
 
         <section>
           <p class="era-point">
-          	Segurança em partes especificas do seu Firebase
+          	Segurança em partes específicas do seu Firebase
           </p>
-					<pre>
-						<code data-trim class="json">
+		<pre>
+			<code data-trim class="json">
 {
   "rules": {
     ".read": true,
@@ -481,13 +479,13 @@ ref.addAuthStateListener(new Firebase.AuthStateListener() {
     }
   }
 }
-						</code>
-					</pre>
+			</code>
+		</pre>
         </section>
 
         <section>
           <p class="era-point">
-          	Variaveis especiais para melhorar a autenticação
+          	Variáveis especiais para melhorar a autenticação
           </p>
 					<pre>
 						<code data-trim class="json">
@@ -507,7 +505,7 @@ ref.addAuthStateListener(new Firebase.AuthStateListener() {
 
         <section>
 					<h3>Security</h3>
-					<p class="text-small">Use $wildcards como rota de parametros</p>
+					<p class="text-small">Use $wildcards como rota de parâmetros</p>
 					<pre>
 						<code data-trim class="json">
 {

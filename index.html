@@ -252,11 +252,11 @@ ref.addValueEventListener(new ValueEventListener() {
         <section>
           <h3>Intermittent Offline</h3>
 
-          <p class="text-small">O que acontece quando quando você passa por um túnel?</p>
+          <p class="text-small">O que acontece quando você passa por um túnel?</p>
           <br><br>
           <p class="text-small fragment">
-          	O "Firebase client" guarda um cache local dos seus dados. Quando o 
-          	usuario fica offline, o app ainda funciona como o esperado com esse cache local.
+          	O "Firebase client" guarda em um cache local dos seus dados. Quando o 
+          	usuário fica offline, o app ainda funciona como o esperado com esse cache local.
           </p>
 
         </section>
@@ -298,7 +298,7 @@ Firebase.getDefaultConfig().setPersistenceEnabled(true);
         <section>
 
           <p class="era-point text-small">
-            Firebase suporta varios tipos de autenticação
+            Firebase suporta vários tipos de autenticação
           </p>
 
           <p class="era-point fragment">
@@ -439,9 +439,9 @@ ref.onAuth(function(authData) {
 		<pre>
 			<code data-trim class="json">
 {
-"rules": {
-	".read": true,
-	".write": true,
+	"rules": {
+		".read": true,
+		".write": true,
 	}
 }
 			</code>
@@ -455,9 +455,9 @@ ref.onAuth(function(authData) {
 		<pre>
 			<code data-trim class="json">
 {
-"rules": {
-	".read": true,
-	".write": false,
+	"rules": {
+		".read": true,
+		".write": false,
 	}
 }
 			</code>
@@ -552,74 +552,6 @@ firebase deploy
 				</section>
 
         <section>
-          <h1>(Optional) Live Coding</h1>
-        </section>
-
-        <section>
-					<h3>Tooling & Integration</h3>
-				</section>
-
-
-        <section>
-          <h3>Bindings</h3>
-          <img src="images/backbonejs.png" class="framework-logo no-style" />
-          <img src="images/emberjs.png" class="framework-logo no-style" />
-          <img src="images/react.png" class="framework-logo no-style" />
-          <img src="images/angularjs.png" class="framework-logo no-style" />
-        </section>
-
-        <section>
-					<h3>AngularFire</h3>
-					<p class="text">A chat app in AngularFire</p>
-					<pre>
-						<code data-trim class="javascript">
-var app = app.module('app', ['firebase']);
-app.controller('ChatCtrl', function($scope, $firebaseArray) {
-  var ref = new Firebase('https://&lt;your-firebase&gt;.firebaseio.com/messages');
-  $scope.messages = $firebaseArray(ref);
-});
-						</code>
-					</pre>
-					<pre>
-						<code data-trim class="html">
-&lt;html&gt;
-  &lt;body ng-app="app"&gt;
-    &lt;div ng-controller="ChatCtrl"&gt;
-      &lt;p ng-repeat="message in messages"&gt;message.text&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-						</code>
-					</pre>
-				</section>
-
-        <section>
-					<h3>Geofire</h3>
-					<p class="text-smaller">Store and query items based on their geographic location in realtime</p>
-					<iframe src="https://geofire.firebaseapp.com/sfVehicles/" height="450px" width="100%"></iframe>
-				</section>
-
-				<section>
-					<h3>Well Documented</h3>
-					<a class="text-tarheel" href="https://firebase.com/docs">
-						<img src="images/docs-site.png">
-					</a>
-				</section>
-
-        <section>
-          <h4>Firebase meta-data</h4>
-          <p class="era-point">
-            <span id="current-devs">170,000+</span> registered developers
-          </p>
-          <p class="era-point">
-            1M concurrent users on Firebase sites
-          </p>
-          <p class="era-point">
-            Joined Google October, 2014
-          </p>
-        </section>
-
-        <section>
           <h4>Firebase in Production</h4>
           <ul>
             <li class="era-point">
@@ -637,13 +569,6 @@ app.controller('ChatCtrl', function($scope, $firebaseArray) {
           </ul>
         </section>
 
-        <section>
-					<h2>Focus on your app</h2>
-					<p class="era-point">The user doesn't care about the backend</p>
-					<p class="era-point">What matters is that your app is
-						<span class="text-tarheel">fast and enjoyable</span>
-					</p>
-				</section>
 
         <section>
 					<h2>Complete Platform</h2>
@@ -654,9 +579,7 @@ app.controller('ChatCtrl', function($scope, $firebaseArray) {
 				</section>
 
         <section>
-          <h1>ASK ME QUESTIONS</h1>
-          <h5>YOUR_NAME / <a href="http://twitter.com/YOUR_TWITTER_HANDLE">@YOUR_TWITTER_HANDLE</a></h5>
-          <h5>YOUR_JOB / <a href="http://twitter.com/YOUR_COMPANY_TWITTER_HANDLE">@YOUR_COMPANY</a></h5>
+          <h1>Perguntas?</h1>
         </section>
 
         <section>

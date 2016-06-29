@@ -226,9 +226,19 @@ ref.addValueEventListener(new ValueEventListener() {
           </code-box>
 //-->
 		<pre><code data-trim data-noescape>
+			// JavaScript
 			var ref = new Firebase("https://xicoapp.firebaseio.com/message");
 			ref.on("value", function(snap) {
 			  console.log(snap.val());
+			});
+			// Java
+			Firebase ref = new Firebase("https://xicoapp.firebaseio.com/message");
+			ref.addValueEventListener(new ValueEventListener() {
+			  @Override
+			  public void onDataChange(DataSnapshot snapshot) {
+			    System.out.println(snapshot.getValue());
+			  }
+			  @Override public void onCancelled(FirebaseError error) { }
 			});
 	  	</code></pre>
 
@@ -267,7 +277,7 @@ ref.addValueEventListener(new ValueEventListener() {
 
         <section>
           <h3>Uma linha de código</h3>
-
+<!--
           <code-box langs="Swift,Java">
             <code-example lang="Swift">
 Firebase.defaultConfig().persistenceEnabled = true
@@ -276,7 +286,11 @@ Firebase.defaultConfig().persistenceEnabled = true
 Firebase.getDefaultConfig().setPersistenceEnabled(true);
             </code-example>
           </code-box>
-
+//-->
+		<pre><code data-trim data-noescape>
+			// Java
+			Firebase.getDefaultConfig().setPersistenceEnabled(true);
+	  	</code></pre>
         </section>
 
         <section>
@@ -286,7 +300,7 @@ Firebase.getDefaultConfig().setPersistenceEnabled(true);
         <section>
 
           <p class="era-point text-small">
-            Firebase suporta varios tipos de autenticacao
+            Firebase suporta varios tipos de autenticação
           </p>
 
           <p class="era-point fragment">
@@ -321,8 +335,8 @@ Firebase.getDefaultConfig().setPersistenceEnabled(true);
 
         <section class="hasCode">
 
-          <h3>Authentication</h3>
-
+          <h3>Autenticação</h3>
+<!--
           <code-box langs="JavaScript,Swift,Java">
             <code-example lang="JavaScript" prop="one">
 // Login with Google
@@ -358,13 +372,20 @@ ref.authWithOAuthToken("google", "&lt;OAuth Token&gt;", new Firebase.AuthResultH
             </code-example>
 
           </code-box>
+//-->
+	<pre><code data-trim data-noescape>
+		// Login with Google
+		ref.authWithOAuthPopup('google', function(error, authData) {
+		  console.log(authData);
+		});
+  	</code></pre>
 
         </section>
 
         <section class="hasCode">
 
-          <h3>Authentication</h3>
-
+          <h3>Autentição</h3>
+<!--
           <code-box langs="JavaScript,Swift,Java">
             <code-example lang="JavaScript" prop="one">
 // Listen for authentcated users
@@ -397,7 +418,15 @@ ref.addAuthStateListener(new Firebase.AuthStateListener() {
             </code-example>
 
           </code-box>
-
+//-->
+		<pre><code data-trim data-noescape>
+			// Listen for authentcated users
+			ref.onAuth(function(authData) {
+			  if(authData) {
+			    console.log('User is logged in!');
+			  }
+			});
+	  	</code></pre>
         </section>
 
         <section>
@@ -423,7 +452,7 @@ ref.addAuthStateListener(new Firebase.AuthStateListener() {
 
         <section>
           <p class="era-point">
-            Todos podem ler, mas niguem pode escrever
+            Todos podem ler, mas niguém pode escrever
           </p>
 		<pre>
 			<code data-trim class="json">
@@ -439,7 +468,7 @@ ref.addAuthStateListener(new Firebase.AuthStateListener() {
 
         <section>
           <p class="era-point">
-          	Seguranca em partes especificas do seu Firebase
+          	Segurança em partes especificas do seu Firebase
           </p>
 					<pre>
 						<code data-trim class="json">
@@ -458,7 +487,7 @@ ref.addAuthStateListener(new Firebase.AuthStateListener() {
 
         <section>
           <p class="era-point">
-          	Variaveis especiais para melhorar a autenticacao
+          	Variaveis especiais para melhorar a autenticação
           </p>
 					<pre>
 						<code data-trim class="json">
